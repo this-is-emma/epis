@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="campaign-details">
+    <h1>{{ campaign.name }}</h1>
+    <p>{{campaign.description}}</p>
+    {% if campaign.donations %}
+        <ul>
+            {% for donation in campaign.donations %}
+            <li>{{ donation.donor}} pledged ${{donation.amount}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No donation yet...</p> 
+    {% endif %}
+    <p><img src="../static{{campaign.photo_url}}" width="500px" height="500px"></p>
+    <a class='donate-btn' href="/donate">DONATE</a>
+</div>
+
+{% if current_user.is_authenticated and current_user.is_admin %}
+
+    <div class="form-div">
+        <h2>Edit Campaign:</h2>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('main.campaign_detail', campaign_id = campaign.id) }}">
+            {{ form.csrf_token }}
+                <legend>Please edit below</legend><br>
+
+                {{ form.name.label }}
+                {{ form.name }}
+
+                {{ form.description.label }}
+                {{ form.description }}
+
+                {{ form.photo.label }}
+                {{ form.photo }}
+                <br>
+                {{ form.submit }}
+        </form>
+    </div>
+
+    
+    <div class="form-div">
+        <h2>Delete Campaign:</h2>
+        <form action="/delete_campaign/{{campaign.id}}" enctype="multipart/form-data" method="POST" >
+            {{ form.csrf_token }}
+            <input type="submit" id="submit" value="Delete Campaign">
+        </form>
+    </div>
+{% endif %}
+{% endblock %}

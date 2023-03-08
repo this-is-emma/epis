@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Register as Donor</h1>
+
+<div class="form-div">
+    <form action="/signup" method="POST">
+        {{ form.csrf_token }}
+        <legend>Please enter your information:</legend>
+
+        <p >{{ form.username.label }}<span>*</span></p>
+        {{ form.username }} (To be used for login and displayed on the site)
+
+        <ul>
+            {% for error in form.username.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <p>{{ form.first_name.label }} <span>*</span></p>
+        {{ form.first_name }}
+
+        <ul>
+            {% for error in form.first_name.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <p>{{ form.email.label }}<span>*</span></p>
+        {{ form.email }}
+        <ul>
+            {% for error in form.email.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        
+         <p>{{ form.phone_number.label }} <span>optional</span></p>
+        {{ form.phone_number }}
+        <ul>
+            {% for error in form.phone_number.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        <p>{{ form.password.label }}<span>*</span></p>
+        {{ form.password }}
+        <ul>
+        {% for error in form.password.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+        </ul>
+        {{ form.submit }}
+    </form>
+</div>
+
+{% endblock %}

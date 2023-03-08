@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Make a donation</h1>
+<div class="form-div">
+    
+    <form method="POST" action="{{ url_for('main.donate') }}">
+        {{ form.csrf_token }}
+        
+        <legend>Please enter the donation details:</legend>
+
+        <p>{{ form.amount.label }}<span>*</span></p>
+        {{ form.amount }}
+
+        <p>{{ form.donated_to.label }}<span>*</span></p>
+        {{ form.donated_to }}
+
+        {{ form.submit }}
+       
+    </form>
+</div>
+{% endblock %}

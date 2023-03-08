@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>New Campaign</h1>
+<div class="form-div">
+    
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('main.new_campaign') }}">
+        {{ form.csrf_token }}
+        
+        <legend>Please enter the campaign information:</legend>
+
+        <p>{{ form.name.label }}<span>*</span></p>
+        {{ form.name }}
+        <ul>
+            {% for error in form.name.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <p>{{ form.description.label }}<span>*</span></p>
+        {{ form.description }}
+        <ul>
+            {% for error in form.description.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <p>{{ form.photo.label}}<span>*</span></p>
+        {{ form.photo }}
+        <ul>
+            {% for error in form.photo.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        {{ form.submit }}
+      
+    </form>
+
+    
+    
+        <img src = "{{ file_url}}"></div>
+      
+  
+</div>
+{% endblock %}

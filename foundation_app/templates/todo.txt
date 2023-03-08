@@ -1,0 +1,20 @@
+TODO: 
+    chge campaign model to add:
+      date created - date 
+      active - bool
+      
+      comments 
+
+   change user model to add:
+      date joined 
+
+   Allow admin to see all users name, date joined and donations! 
+
+   Add avatar for users
+
+   make blurry edge of footer/header 
+
+   add watermark to uploaded pictured !!
+
+DONE:  ✅ implemented responsiveness 
+       ✅ picture - ???? peraps string - ONLY 1 picture at this time. Photo Gallery will be handled by a third party (ME lol)  
