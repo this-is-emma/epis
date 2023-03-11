@@ -9,41 +9,43 @@ body {
     margin: 0;
     font-family: "Josefin Sans";
     font-weight: lighter;
-    background-image: url('epis3.jpg');
+    background-image: url('bg.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
     overflow: hidden;
     padding: 15px 5.2rem;
+    justify-content: center;
+    align-items: center;
     height: 280px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     font-weight: lighter;
-}
-  
-.header > :last-child {
-    align-self:flex-end;
 }
 
 .header > :first-child{
     margin-top: 50px;
-    align-self: flex-end;
-    font-weight: lighter;
+    font-weight:lighter;
     color: rgb(209, 133, 0);
     font-size: 3em;
 }
 
   .footer {
     padding: 25px;
-    text-align: right;
-    height: 150px;
+    text-align: center;
+    margin-top: 60px;
+    line-height: 2;
     color: white;
-    font-size: 20px;
-    font-weight:100;
+    font-size: 15px;
+    bottom:0;
+    margin-top: auto;
   }
 
   .footer a {
@@ -56,23 +58,22 @@ body {
     transition: all 1.2s ease;
   }
 
-  main{
-    background-color: white;
-  }
   .header a{
     float: left;
     text-decoration: none;
     color: rgb(255, 255, 255);
     transition: all 1s ease-out;
     padding: 12px;
-    font-size: 25px; 
+    font-size: 30px; 
     line-height: 25px;
     border-radius: 4px;
   }
 
   .header h2 {
-    font-family: "Caveat";
+    font-family: "League Script";
     font-size: 2.5em;
+    margin: 0.8em;
+    color: teal;
   }
 
   .header a:hover {
@@ -113,11 +114,12 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.233);
     border-radius: 8px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    
     margin: 50px 40px;
     padding: 30px;
     gap: 15px;
+    background: rgb(255, 255, 255);
   }
+
 
   .total-donations {
     display: flex;
@@ -156,6 +158,7 @@ body {
     margin: 50px 40px;
     padding: 30px;
     gap: 15px;
+    background: rgb(255, 255, 255);
   }
 
 .form-div form{
@@ -173,6 +176,10 @@ body {
     flex-direction: column;
     gap: 1.5em;
     list-style: none;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .campaign-details ul {
@@ -238,6 +245,7 @@ body {
     padding: 30px;
     gap: 15px;
     font-size: 20px;
+    background: rgb(255, 255, 255);
 }
 
 .my-donations h2 {
@@ -253,6 +261,7 @@ body {
     margin: 40px 40px;
     padding: 30px;
     gap: 3.5em;
+    background: rgb(255, 255, 255);
 }
 
 /* form errors */
@@ -274,6 +283,17 @@ span {
 
   
 @media screen and (max-width: 960px) {
+
+    body { 
+      margin: 0;
+      font-family: "Josefin Sans";
+      font-weight: lighter;
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
     .header {
         overflow: hidden;
         height: fit-content;
@@ -319,6 +339,7 @@ span {
         margin: 40px 40px;
         padding: 30px;
         gap: 3.5em;
+        background: rgb(255, 255, 255);
     }
 }
 

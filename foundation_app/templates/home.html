@@ -2,19 +2,6 @@
 {% block content %}
 
 <div class="content">
-    {% for campaign in all_campaigns %}
-    <div class="campaigns">
-        <p id="campaign-name"><strong><a href="/campaign/{{campaign.id }}">{{ campaign.name }}</a></strong></p>
-        <p>{{campaign.description}}</p>
-        <div class="total-donations">
-            <h3>Total received so far:</h3>
-            {% if donation_dict[campaign.id] %}
-                <strong><p>${{donation_dict[campaign.id]|sum}}</p></strong>
-            {% else %}
-                <i>No donation yet...</i>
-            {% endif %}
-        </div>   
-    </div>
-    {% endfor %}
+    
 </div>
 {% endblock %}

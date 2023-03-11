@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Register as Donor</h1>
 
 <div class="form-div">
+    <h1>Register as Donor</h1>
     <form action="/signup" method="POST">
         {{ form.csrf_token }}
         <legend>Please enter your information:</legend>

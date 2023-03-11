@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="user-account">
-    <h1>Welcome {{user.username}}!</h1>
     <div class="my-donations">
+        <h1>Hello {{user.username}} !</h1>
         <h2>Your dashboard:</h2>
         {% if user.donations %}
             {% for donation in user.donations  %}
                 <p>${{donation.amount}} donated to {{donation.campaign}}</p>
             {% endfor %}
         {% else %}
-            <p>No donation yet...let's change that 😃 visit our <a href="/">current campaigns</a></p>
+            <p>No donation yet...let's change that 😃 visit our <a href="/campaigns">current campaigns</a></p>
         {% endif %}
         
     </div>
-    <h1>What do you want to do today? </h1>
     <div class="user-actions">
+        <h1>What do you want to do today? </h1><br>
         {% if current_user.is_admin %}
         <a href="/new_campaign">Create campaign</a>
         <a href="/set_admin">Set new admin</a>

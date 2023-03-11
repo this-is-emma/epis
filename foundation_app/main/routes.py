@@ -20,6 +20,17 @@ def homepage():
             donation_dict[i].append(donation.amount)  
     return render_template('home.html', all_campaigns=all_campaigns, donation_dict = donation_dict)
 
+@main.route('/campaigns')
+def campaigns():
+    all_campaigns = Campaign.query.all()
+    donation_dict = {}
+    for campaign in all_campaigns:
+        i = campaign.id
+        donation_dict[i] = []
+        for donation in campaign.donations:
+            donation_dict[i].append(donation.amount)  
+    return render_template('campaigns.html', all_campaigns=all_campaigns, donation_dict = donation_dict)
+
 #PHOTO DISPLAYING
 @main.route('/uploads/<filename>')
 def get_file(filename):
