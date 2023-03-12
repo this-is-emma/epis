@@ -312,9 +312,24 @@ body {
   background: rgb(255, 255, 255);
 }
 
-.user-info-p {
+/* user-account [ADMIN]: all users*/
 
+.admin-info{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.233);
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  margin: 40px 40px;
+  padding:  40px;
+  gap: 1em;
+  background: rgb(255, 255, 255);
 }
+
+.admin-info ol {
+  padding-left: 1em;
+}
+
 
 /* form errors */
 .error{
@@ -359,6 +374,8 @@ span {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat; 
+    min-height: fit-content;
+    background-color: #cbd3d6;
   }
 
   .header h2 {
@@ -442,7 +459,7 @@ span {
     height: auto;
   }
 
-  /* User info */
+  /* user-account: user info desction*/
   .user-info{
     display: flex;
     flex-direction: column;
@@ -450,9 +467,26 @@ span {
     border-radius: 8px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     margin: 40px 40px;
-    padding: 40px;
-    gap: 20px;
+    padding:  40px;
+    gap: 1em;
     background: rgb(255, 255, 255);
+  }
+
+  /* user-account [ADMIN]: all users*/
+  .admin-info{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 40px 40px;
+    padding:  40px;
+    gap: 1em;
+    background: rgb(255, 255, 255);
+  }
+
+  .admin-info ol {
+    padding-left: 1em;
   }
 }
 

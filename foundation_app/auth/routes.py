@@ -47,7 +47,9 @@ def user_account():
     user1 = User.query.get(id)
     print(f'user1 is: {user1}')
     print(f'donations are : {user1.donations}')
-    return render_template('user_account.html', user = user)
+    #gather all users:
+    all_users = User.query.all()
+    return render_template('user_account.html', user = user, all_users=all_users)
 
 
 

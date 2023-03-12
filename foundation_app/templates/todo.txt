@@ -5,7 +5,7 @@ TODO:
       ✅ Need a favicon!! 
       
       comments 
-      Allow admin to see all users name, date joined and donations! 
+      ✅ Allow admin to see all users name, date joined and donations! 
       Add avatar for users
       add watermark to uploaded pictured !!
 
