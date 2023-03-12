@@ -2,7 +2,13 @@
 {% block content %}
 <div class="campaign-details">
     <h1>{{ campaign.name }}</h1>
+    {% if campaign.is_active%}
+        <h3>Status: Active</h3>
+    {% else %}
+        <h3>Status: Inactive</h3>
+    {% endif %}
     <p>{{campaign.description}}</p>
+    <i>Created on: {{campaign.date_created}}</i>
     {% if campaign.donations %}
         <ul>
             {% for donation in campaign.donations %}
@@ -32,8 +38,13 @@
                 {{ form.description.label }}
                 {{ form.description }}
 
+                <p>Set Campaign inactive (In case it is completed)</p>
+                {{ form.is_active.label }}  
+                {{ form.is_active }}
+
                 {{ form.photo.label }}
                 {{ form.photo }}
+
                 <br>
                 {{ form.submit }}
         </form>

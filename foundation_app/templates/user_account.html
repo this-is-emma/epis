@@ -24,5 +24,15 @@
             <a href="/logout"><span id="mobile-icons" class="fa-solid fa-right-from-bracket"></span>Log Out</a>
         </div>
     </div>
+
+    <div class="user-info">
+        <h1>Your information:</h1>
+        <div class="user-info-p">
+            <p>First name: {{user.first_name}}</p>
+            <p>Email: {{user.email}}</p>
+            <p>Phone number: {{user.phone_number}}</p>
+            <p>Member since: {{user.date_joined}}</p>
+        </div>
+    </div>
 </div>
 {% endblock %}

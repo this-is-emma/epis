@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin Sans">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League Script">
         <script src="https://kit.fontawesome.com/f98920d462.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/x-icon" href="../static/icon.png">
         <link rel="stylesheet" href="../static/styles.css">
     </head>
     <body>
@@ -34,12 +35,12 @@
       </header>
       <main>
         <div id="all">
-          
           {% for message in get_flashed_messages() %}
               <p class="flash-message">{{ message }}</p>
           {% endfor %}
-          {% block content %}{% endblock %}
-                
+          {% block content %}
+            <!-- Page content -->
+          {% endblock %}      
         </div>
       </main> 
       <footer class="footer">

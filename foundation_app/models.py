@@ -12,6 +12,7 @@ class User(UserMixin, db.Model):
     phone_number = db.Column(db.String(100), nullable=True)
     is_admin = db.Column(db.Boolean, unique=False, default=False)
     donations = db.relationship('Donation', back_populates='donor')
+    date_joined = db.Column(db.Date, nullable=False)
 
     def __str__(self):
         return self.username
@@ -23,6 +24,8 @@ class Campaign(db.Model):
     description = db.Column(db.String(80), nullable=False)
     photo_url = db.Column(URLType)
     donations = db.relationship('Donation', back_populates='campaign')
+    date_created = db.Column(db.Date, nullable=False)
+    is_active = db.Column(db.Boolean, unique=False, default=True)
 
     def __str__(self):
         return self.name

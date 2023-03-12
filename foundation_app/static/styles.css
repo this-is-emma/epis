@@ -92,10 +92,14 @@ body {
   }
   .flash-message {
     background-color: white;
-    padding-top: 20px;
     text-align: center;
     font-size: 30px;
     color: teal;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 50px 40px;
+    padding: 30px;
   }
 
   .content {
@@ -295,12 +299,21 @@ body {
   font-size: 30px;
 }
 
-/*Mobile icons*/
-#mobile-icons{
-  visibility: hidden;
-  color:rgb(209, 133, 0);
-  margin-right: 5px;
-  padding-right: 5px;
+/* user-account: user info desction*/
+.user-info{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.233);
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  margin: 40px 40px;
+  padding:  40px;
+  gap: 1em;
+  background: rgb(255, 255, 255);
+}
+
+.user-info-p {
+
 }
 
 /* form errors */
@@ -315,11 +328,18 @@ span {
   color:red;
 }
 
+/*Mobile icons*/
+#mobile-icons{
+  visibility: hidden;
+  color:rgb(209, 133, 0);
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
 .donate-btn{
   font-size: 25px;
   padding-top: 10px;
 }
-
   
 @media only screen and (max-width: 1024px) {
 

@@ -41,6 +41,7 @@ def get_file(filename):
 @login_required
 def new_campaign():
     form = CampaignForm()
+    print(f'Radio head shows: {form.is_active.data}')
     if form.validate_on_submit():
         #PHOTO HANDLING
         filename = photos.save(form.photo.data) 
@@ -50,8 +51,12 @@ def new_campaign():
         new_campaign = Campaign (
             name = form.name.data, 
             description = form.description.data,
+            date_created = datetime.now(),
+            is_active = True if form.is_active.data == 'True' else False,
             photo_url = file_url
         )
+
+    
             
         db.session.add(new_campaign)
         db.session.commit()
@@ -85,13 +90,13 @@ def campaign_detail(campaign_id):
     form = CampaignForm(obj = campaign)
     
     if form.validate_on_submit():
-        print('form is VALID!')
         filename = photos.save(form.photo.data)
         file_url = url_for('main.get_file', filename=filename)
 
         #Get path for updated picture as well as rest of info
         campaign.name = form.name.data 
         campaign.description = form.description.data
+        campaign.is_active = True if form.is_active.data == 'True' else False
         campaign.photo_url = file_url
 
         db.session.commit()

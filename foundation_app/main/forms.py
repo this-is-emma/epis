@@ -1,6 +1,6 @@
 # Create your forms here.
 from flask_wtf import FlaskForm
-from wtforms import StringField, DateField, SelectField, SubmitField, FloatField, fields
+from wtforms import StringField, DateField, SelectField, SubmitField, FloatField, fields, RadioField
 from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from wtforms.validators import DataRequired, Length, URL
@@ -18,6 +18,12 @@ class CampaignForm(FlaskForm):
         validators=[
             DataRequired(), 
             Length(min=50, message="description should be at least 50 chars")
+        ])
+    #Is Campaign active?
+    is_active = RadioField('Campaign Status', choices=[(True,'Active'),(False,'Inactive')],
+        default= True,
+        validators=[
+            DataRequired()
         ])
     #FOR PHOTOS:
     photo = FileField('Upload a photo:',

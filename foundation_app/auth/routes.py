@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required, current_user
-
+from datetime import datetime
 from foundation_app.models import User
 from foundation_app.auth.forms import SignUpForm, LoginForm
 from foundation_app.extensions import app, db, bcrypt
@@ -18,7 +18,8 @@ def signup():
             phone_number = form.phone_number.data,
             first_name = form.first_name.data,
             email = form.email.data,
-            password=hashed_password
+            password=hashed_password,
+            date_joined = datetime.now()
         )
 
         db.session.add(user)
