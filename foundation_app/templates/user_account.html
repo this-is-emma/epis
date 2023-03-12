@@ -15,12 +15,14 @@
     </div>
     <div class="user-actions">
         <h1>What do you want to do today? </h1><br>
-        {% if current_user.is_admin %}
-        <a href="/new_campaign">Create campaign</a>
-        <a href="/set_admin">Set new admin</a>
-        {% endif %}
-        <a href="/donate">DONATE</a>
-        <a href="/logout">Log Out</a>
+        <div class="user-actions-links">
+            {% if current_user.is_admin %}
+            <a href="/new_campaign"><span id="mobile-icons" class="fa-solid fa-plus"></span>Create campaign</a>
+            <a href="/set_admin"><span id="mobile-icons" class="fa-solid fa-gears"></span>Set new admin</a>
+            {% endif %}
+            <a href="/donate"><span id="mobile-icons" class="fa-solid fa-hand-holding-heart"></span>DONATE</a>
+            <a href="/logout"><span id="mobile-icons" class="fa-solid fa-right-from-bracket"></span>Log Out</a>
+        </div>
     </div>
 </div>
 {% endblock %}

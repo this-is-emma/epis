@@ -4,30 +4,31 @@
         <title>Les ÉPIS</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin Sans">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League Script">
+        <script src="https://kit.fontawesome.com/f98920d462.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../static/styles.css">
     </head>
     <body>
       <header class="header">
-        <a href="/">Les ÉPIS</a>
+        <a href="/"></span> Les ÉPIS</a>
         <h2>Giving back to communities</h2>
         <div class="'navbar">
           {% if current_user.is_authenticated %}
-          <a href="/">Home</a>
-          <a href="/campaigns">Campaigns</a>
-          <a href="/donate">DONATE</a>
-          <a href="/user_account">My account</a>
-          <a href="/logout">Log Out</a>
+          <a href="/"><span id="mobile-icons" class="fa-solid fa-house"></span>Home</a>
+          <a href="/campaigns"><span id="mobile-icons" class="fa-solid fa-wheat-awn"></span>Campaigns</a>
+          <a href="/donate"><span id="mobile-icons" class="fa-solid fa-hand-holding-heart"></span>DONATE</a>
+          <a href="/user_account"><span id="mobile-icons" class="fa-solid fa-user"></span>My account</a>
+          <a href="/logout"><span id="mobile-icons" class="fa-solid fa-right-from-bracket"></span>Log Out</a>
           {% elif current_user.is_authenticated and current_user.is_admin%}
-          <a href="/">Home</a>
-          <a href="/donate">DONATE</a>
-          <a href="/user_account">My account</a>
-          <a href="/logout">Log Out</a>
+          <a href="/"><span id="mobile-icons" class="fa-solid fa-house"></span>Home</a>
+          <a href="/donate"><span id="mobile-icons" class="fa-solid fa-hand-holding-heart"></span>DONATE</a>
+          <a href="/user_account"><span id="mobile-icons" class="fa-solid fa-user"></span>My account</a>
+          <a href="/logout"><span id="mobile-icons" class="fa-solid fa-right-from-bracket"></span>Log Out</a>
           <a href="/new_campaign">Create a campaign</a>
           {% else %}
-          <a href="/">Home</a>
-            <a href="/campaigns">Campaigns</a>
-            <a href="/login">Log in</a>
-            <a href="/signup">Sign up as a donor</a>
+            <a href="/"><span id="mobile-icons" class="fa-solid fa-house"></span>Home</a>
+            <a href="/campaigns"><span id="mobile-icons" class="fa-solid fa-wheat-awn"></span>Campaigns</a>
+            <a href="/login"><span id="mobile-icons" class="fa-solid fa-right-to-bracket"></span>Log in</a>
+            <a href="/signup"><span id="mobile-icons" class="fa-solid fa-user-plus"></span>Sign up as a donor</a>
           {% endif %}
         </div>
       </header>

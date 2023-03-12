@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Make a donation</h1>
+
 <div class="form-div">
-    
+    <h1>Make a donation</h1>
     <form method="POST" action="{{ url_for('main.donate') }}">
         {{ form.csrf_token }}
         
